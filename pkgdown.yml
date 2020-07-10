@@ -1,0 +1,10 @@
+pandoc: '2.2'
+pkgdown: 1.5.1
+pkgdown_sha: ~
+articles:
+  eplusr: eplusr.html
+last_built: 2020-07-10T09:27Z
+urls:
+  reference: https://hongyuanjia.github.io/eplusr/reference
+  article: https://hongyuanjia.github.io/eplusr/articles
+
