@@ -3120,7 +3120,7 @@ format_epw_header_location <- function (location) {
 # }}}
 # format_epw_header_design {{{
 format_epw_header_design <- function (design) {
-    if (length(design) == 0L) return("0")
+    if (length(unlist(design)) == 0L) return("0")
     res <- paste("1", design$source, "", sep = ",")
     for (i in 2L:4L) {
         res <- paste(res,
