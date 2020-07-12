@@ -3120,7 +3120,7 @@ format_epw_header_location <- function (location) {
 # }}}
 # format_epw_header_design {{{
 format_epw_header_design <- function (design) {
-    if (length(design) == 0L) return("0")
+    if (length(unlist(design)) == 0L) return("0")
     res <- paste("1", design$source, "", sep = ",")
     for (i in 2L:4L) {
         res <- paste(res,
@@ -3146,7 +3146,7 @@ format_epw_header_design <- function (design) {
 # }}}
 # format_epw_header_typical {{{
 format_epw_header_typical <- function (typical) {
-    if (length(typical) == 0L) return("0")
+    if (length(unlist(typical)) == 0L) return("0")
     paste(nrow(typical),
         typical[, paste(
             name,
@@ -3162,7 +3162,7 @@ format_epw_header_typical <- function (typical) {
 # }}}
 # format_epw_header_ground {{{
 format_epw_header_ground <- function (ground) {
-    if (length(ground) == 0L) return("0")
+    if (length(unlist(ground)) == 0L) return("0")
     d <- dcast.data.table(copy(ground)[, temp := fmt_dbl(temperature)],
         index + depth + soil_conductivity + soil_density + soil_specific_heat ~ month,
         value.var = "temp"
